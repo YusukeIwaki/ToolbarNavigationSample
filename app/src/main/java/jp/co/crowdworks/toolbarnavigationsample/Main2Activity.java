@@ -25,26 +25,6 @@ public class Main2Activity extends MainActivity {
     }
 
     @Override
-    public Intent getParentActivityIntent(){
-        Intent intent = super.getParentActivityIntent();
-        if(intent==null) intent = createParentIntent();
-        return intent;
-    }
-
-    @Override
-    public Intent getSupportParentActivityIntent(){
-        Intent intent = super.getSupportParentActivityIntent();
-        if(intent==null) intent = createParentIntent();
-        return intent;
-    }
-
-    private Intent createParentIntent(){
-        Intent intent = new Intent(this, MainActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        return intent;
-    }
-
-    @Override
     protected void setupFragment(){
         getSupportFragmentManager().beginTransaction()
                 .add(R.id.activity_main_container, new Main2Fragment())
