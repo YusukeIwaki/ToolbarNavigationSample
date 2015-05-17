@@ -97,4 +97,15 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    public void onBackPressed(){
+        ListView sidemenu = (ListView) findViewById(R.id.activity_main_sidemenu);
+        if(mDrawerLayout.isDrawerOpen(sidemenu)){
+            mDrawerLayout.closeDrawer(sidemenu);
+        }
+        else {
+            super.onBackPressed();
+        }
+    }
 }
